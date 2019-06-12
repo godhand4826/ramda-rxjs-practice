@@ -30,7 +30,7 @@ const $update = rxjs.Observable.create(observer => {
 
     setInterval(() => {
         stocks.forEach(stock => {
-            stock.change = (randomBool() ? -1 : -1) * (random0to9() / 10)
+            stock.change = (randomBool() ? +1 : -1) * (random0to9() / 10)
             stock.price += stock.change
             observer.next(stock)
         })
